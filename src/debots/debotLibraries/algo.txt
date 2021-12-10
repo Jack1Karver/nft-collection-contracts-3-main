@@ -1,0 +1,14 @@
+tonos-cli genaddr NftDebot.tvc NftDebot.abi.json --genkey NftDebot.keys.json > log.log
+
+tonos-cli --url https://net.ton.dev deploy NftDebot.tvc "{}" --sign NftDebot.keys.json --abi NftDebot.abi.json
+
+tonos-cli --url https://net.ton.dev call 0:5c1adc0df464af18ad27c58041be05652994a53c6c73fec1b3cde70c082e4619 setABI dabi.json --sign NftDebot.keys.json --abi NftDebot.abi.json
+
+tonos-cli --url https://net.ton.dev call --abi NftDebot.abi.json --sign NftDebot.keys.json 0:5c1adc0df464af18ad27c58041be05652994a53c6c73fec1b3cde70c082e4619 setNftRootAddress Root.json
+
+
+https://web.ton.surf/debot?address=0%3Ab8716bbb76f8e328164949e13695637879331e4d499127d8c2adf74bbfcbcd91&net=devnet&restart=true
+
+tonos-cli --url https://net.ton.dev debot --debug fetch 0:5c1adc0df464af18ad27c58041be05652994a53c6c73fec1b3cde70c082e4619
+
+0:c76df37ebca50081dabd662fe54bbe1348ad1f67059315384e53e0ea5d183d57
